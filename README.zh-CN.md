@@ -28,10 +28,10 @@
 只需简单的几步指令即可完成本地环境的克隆与初始化：
 
 ```bash
-git clone [https://github.com/JackProAi/JackProAi-claudecode.git](https://github.com/JackProAi/JackProAi-claudecode.git)
+git clone https://github.com/JackProAi/JackProAi-claudecode.git
 cd JackProAi-claudecode
-chmod +x claude-local
-./claude-local --init-env
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\claude-local.ps1 --init-env
 ```
 
 ### 🔑 核心 API 配置
@@ -43,7 +43,7 @@ chmod +x claude-local
 如果您尚未生成该文件，请先执行环境初始化命令：
 
 ```bash
-./claude-local --init-env
+.\claude-local.ps1 --init-env
 ```
 
 打开 `claude-local.env`，将其中的占位符替换为您真实的 API 密钥：
@@ -67,7 +67,7 @@ ANTHROPIC_AUTH_TOKEN=paste_your_api_key_here
 CLAUDE_LOCAL_PROVIDER=siliconflow
 ANTHROPIC_AUTH_TOKEN=paste_your_api_key_here
 # Optional advanced overrides:
-ANTHROPIC_BASE_URL=[https://api.siliconflow.cn/](https://api.siliconflow.cn/)
+ANTHROPIC_BASE_URL=https://api.siliconflow.cn
 ANTHROPIC_MODEL=moonshotai/Kimi-K2-Instruct-0905
 ANTHROPIC_SMALL_FAST_MODEL=moonshotai/Kimi-K2-Instruct-0905
 ```
